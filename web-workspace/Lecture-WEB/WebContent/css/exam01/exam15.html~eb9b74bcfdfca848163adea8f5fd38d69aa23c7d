@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*h1태그 부터 같은 형제들 중에 오른쪽에 있는 h2는 색을 바꿔라 */
+/*돔형태로 되어 있음*/
+	h1 ~ h2 { 
+	 color: red;
+	}
+/*h1바로 뒤에 나오는 h2만 색이 바뀜*/	
+	h1 + h2 {
+		color: blue;
+	}
+	
+	h3 + h2 {
+		color: blue;
+	}
+
+</style>
+</head>
+<body>
+	<h2>Header2-1</h2>
+	<h1>Header1-1</h1>
+	<h3>Header3-1</h3>
+	<h2>Header2-2</h2>
+	<h2>Header2-3</h2>
+	<h2>Header2-4</h2>
+	<h2>Header2-5</h2>
+	<h1>Header1-2</h1>
+	<h2>Header2-6</h2>
+	<h2>Header2-7</h2>
+</body>
+</html>
