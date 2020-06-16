@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*	어떤 태그 밑에 자식이 1개 있는데 그게 p 태그 일 때에 */
+	p:only-child {
+		color : red;
+	}
+
+/*	여러가지 태그 중 해당 태그는 하나만 있을 때에 */	
+	p:only-of-type {
+		background-color: yellow;
+	}
+	
+</style>
+</head>
+<body>
+	<p>good!!!</p>
+	<h3>안녕~~~</h3>
+	<div>
+		<p>Hello World</p>
+	</div>
+</body>
+</html>

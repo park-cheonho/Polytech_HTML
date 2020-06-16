@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function testFunction() {
+		alert('call...');
+	}
+
+	function testFunction2(data) {
+		alert('data : ' + data);
+	}
+	
+	function testFunction3(data1, data2, dat3) {
+		return data1;
+	}
+	
+	function sum(a, b){
+		return a + b;
+	}
+
+	var temp = function func() {
+		alert('call func()');
+	}
+	
+	var func01 = function() {
+		alert('call func01()...');
+	}
+	
+	function getSum(a, b){
+		let s = 0;
+		while(a <= b){
+			s+= a++;
+		}
+		return s;
+	}
+	
+	function printSum(a, b) {
+		
+		function sum(a, b) {
+			let s = 0;
+			while(a <= b){
+				s+= a++;
+			}
+			return s;
+		}
+		alert('1~10사이의 총합 : ' + sum(a, b));
+	}
+	
+	function callbackFunc(f) {
+		f();
+	}
+	
+	callbackFunc(function() {
+		alert('익명함수 호출...');
+	});
+	
+	callbackFunc(temp);
+	
+	//////////////// 함수 호출 //////////////////////
+	
+	callbackFunc(temp);
+	
+	printSum(1, 1999);
+	temp();
+	func01();
+	
+	testFunction();
+	testFunction2(100);
+	testFunction2('hello');
+	alert(testFunction3('a', 'b', 'c'));
+	alert(sum(30, 49));
+	
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

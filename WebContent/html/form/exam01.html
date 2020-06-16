@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		<form>
+			<input type="" >
+				type 	text(한줄입력)
+						password(암호처리)
+						checkbox(다중선택)
+						radio(단일선택)
+						button(사용자정의이벤트)
+						file(첨부파일)
+						reset(초기화)
+						hidden(입력받지않은 데이터를 전송)
+						summit(form 태그로 입력받은 모든 데이터 전송)
+						
+			<textarea></textarea>	여러줄을 입력받기 위한 태그
+			
+		</form>
+						
+	 -->
+	 <form action="http://www.naver.com">
+	 	<label>아이디 : <input type="text" size="50"></label><br>
+	 	<label for="pwd">비밀번호 : <input type="password" id = "pwd"></label><br>
+	 	<fieldset>
+	 		<legend><strong>희망연봉</strong><br>
+	 		<input type = "radio" name="salary"> 12억 <br>
+	 		<input type = "radio" name="salary"> 24억 <br>
+	 		<input type = "radio" name="salary"> 36억 <br>
+	 		<input type = "radio" name="salary"> 48억 <br>
+	 	</fieldset>
+	 	
+	 	<strong>사용언어(중복선택 가능)</strong><br>
+	 	<input type ="checkbox" name = "lang">JAVA<br>
+	 	<input type ="checkbox" name = "lang">C<br>
+	 	<input type ="checkbox" name = "lang">C++<br>
+	 	<input type ="checkbox" name = "lang">Python<br>
+	 	<input type ="checkbox" name = "lang">HTML<br>
+	 
+	 	<br>
+		<strong>취미(중복선택 가능)</strong><br>            
+		<input type ="checkbox" name = "hobby">코딩<br>
+		<input type ="checkbox" name = "hobby">개발<br>
+		<input type ="checkbox" name = "hobby">디버깅<br>	 
+	 
+	 	<strong>자기소개</strong><br>            
+		<textarea rows = "5" cols = "50"></textarea><br>
+		
+		<strong>첨부파일</strong><br>
+		<input type="file" size = "50"><br>
+	 
+	 	<input type="submit" value = "전송">
+	 </form>
+</body>
+</html>
