@@ -5,55 +5,78 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 
-		<form>
-			<input type="" >
-				type 	text(한줄입력)
-						password(암호처리)
-						checkbox(다중선택)
-						radio(단일선택)
-						button(사용자정의이벤트)
-						file(첨부파일)
-						reset(초기화)
-						hidden(입력받지않은 데이터를 전송)
-						summit(form 태그로 입력받은 모든 데이터 전송)
-						
-			<textarea></textarea>	여러줄을 입력받기 위한 태그
+<!-- 
+<form> input은 일반적으로 form 안에 있음 ! 거의 대부분
+<input type="종류에 따라 화면에 보여지는 형태가 달라짐"> 클라이언트가 입력한 정보를 서버에 전달하기 위해 만듦
+	type="속성값의 종류" 범위 : form안에서 입력 받은 모든 데이터
+			text 한줄입력
+			password 안보이게 문자 입력 할때
+			checkbox 네모형태로 되어 있는 다중선택을 목적으로 사용 
+			radio 단일선택 하게하려고 
+			button 사용자 정의 이벤트 발생을 위해
+			file 파일 올릴수 있도록 하는 첨부파일 
+			reset form안에서 입력 받은 모든 데이터를 초기화 하는 것 버튼으로 구성 
+			hidden 클라이언트가 입력하지 않은 정보를 서버에 전달하기 위해? 키보드로 입력을 받지 않는?
+			summit 서버에 전달을 해주는 form안에서 입력 받은 모든 데이터를 서버에 전달
 			
-		</form>
-						
-	 -->
-	 <form action="http://www.naver.com">
-	 	<label>아이디 : <input type="text" size="50"></label><br>
-	 	<label for="pwd">비밀번호 : <input type="password" id = "pwd"></label><br>
-	 	<fieldset>
-	 		<legend><strong>희망연봉</strong><br>
-	 		<input type = "radio" name="salary"> 12억 <br>
-	 		<input type = "radio" name="salary"> 24억 <br>
-	 		<input type = "radio" name="salary"> 36억 <br>
-	 		<input type = "radio" name="salary"> 48억 <br>
-	 	</fieldset>
-	 	
-	 	<strong>사용언어(중복선택 가능)</strong><br>
-	 	<input type ="checkbox" name = "lang">JAVA<br>
-	 	<input type ="checkbox" name = "lang">C<br>
-	 	<input type ="checkbox" name = "lang">C++<br>
-	 	<input type ="checkbox" name = "lang">Python<br>
-	 	<input type ="checkbox" name = "lang">HTML<br>
-	 
-	 	<br>
-		<strong>취미(중복선택 가능)</strong><br>            
-		<input type ="checkbox" name = "hobby">코딩<br>
-		<input type ="checkbox" name = "hobby">개발<br>
-		<input type ="checkbox" name = "hobby">디버깅<br>	 
-	 
-	 	<strong>자기소개</strong><br>            
-		<textarea rows = "5" cols = "50"></textarea><br>
-		
-		<strong>첨부파일</strong><br>
-		<input type="file" size = "50"><br>
-	 
-	 	<input type="submit" value = "전송">
-	 </form>
+	<textarea> 시작과 종료가 같이 있어야합니다. 자소서 입력 할 때 
+	</textarea>
+ </form>
+ -->
+ <h1>입력 서식</h1>
+ <form action= "https://www.boho.or.kr/main.do">
+   	<fieldset>
+		<!-- label 태그를 이용해서 이름 주민번호를 눌러도 입력하는 칸이 활성화 되도록 -->
+  		<label>이름    : <input type="text" size="25"></label><br>
+  		<label for="pwd">주민번호 : </label><input type="password" id="pwd"><br><br>
+ 	</fieldset>
+ 
+ 	<fieldset>
+  		<legend>희망연봉</legend><br>
+  		<input type="radio" name="salary">2500~2800<br>
+  		<input type="radio" name="salary">2800~3200<br>
+  		<input type="radio" name="salary">3200~3600<br>
+  		<input type="radio" name="salary">3600~4000<br>
+  		<input type="radio" name="salary">4000~4200<br>
+  		<input type="radio" name="salary">4200이상<br><br><br>
+ 	</fieldset>
+  
+  <strong>사용 가능 언어(중복선택 가능)</strong><br>
+  <input type="checkbox" name="lang">C<br>
+  <input type="checkbox" name="lang">C++<br>
+  <input type="checkbox" name="lang">JAVA<br>
+  <input type="checkbox" name="lang">Python<br>
+  <input type="checkbox" name="lang">HTML<br>
+  <input type="checkbox" name="lang">Javsscript<br>
+  <input type="checkbox" name="lang">Go<br><br><br>
+  
+  <strong>희망 직무(중복선택 가능)</strong><br>
+  <input type="checkbox" name="job">개발<br>
+  <input type="checkbox" name="job">운영<br>
+  <input type="checkbox" name="job">영업<br>
+  <input type="checkbox" name="job">기획<br>
+  <input type="checkbox" name="job">경영지원<br><br><br>
+  
+  <strong>자기소개 : 자신의 삶에서 추구하는 가장 중요한 가치는 무엇이며 그 가치를 실현한 경험을 들려주세요(500자 이내)</strong><br><br>
+  <br><textarea rows ="20" cols="100"></textarea><br><br><br>
+  
+  <strong>초본,등본,통장사본(.pdf)</strong><br>
+  <br><input type="file" size="50"><br><br><br>
+  
+  
+  <button>버튼</button>
+  <button type="reset">초기화</button>
+  <button type="submit">초기화</button>
+  
+  <!--  
+  <input type = "button" value = "버튼">
+  <input type = "submit" value = "전송">
+  <input type = "reset" value = "초기화">
+  -->
+  
+</form>
+ 
+ 
 </body>
 </html>
+

@@ -4,19 +4,40 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	let d = new Date();
-	let hour  = d.getHours();
+	//Date는 객체 형태 생성자 => new 써야한다
+	//내장 객체 date
 	
-	if(hour<12) {
-		alert('아침먹을 시간입니다');
-	} else if(hour<18) {
-		alert('점심먹을 시간입니다');
-	} else {
-		alert('저녁먹을 시간입니다');
+	let d = new Date();
+	let hour = d.getHours();
+	
+	// if문 사용하기
+	if(hour < 12) {
+		alert('아침 먹을 시간 입니다');
+	}else if (hour < 18) {
+		alert('점심 먹을 시간 입니다');
+	}else {
+		alert('저녁 먹을 시간 입니다');
 	}
 	
+	
+	//switch 사용하기
+	var num = prompt('정수를 입력하세요');
+	num = Number(num);
+	
+	var msg = num % 2 == 0 ? "짝수" : "홀수";
+	alert(msg);
+	
+	switch(num % 2) {
+	case 0 : 
+		alert(num + '은 짝수입니다');
+		break;
+	case 1 : 
+		alert(num + '은 홀수입니다');
+		break;
+	}
 </script>
 </head>
 <body>
+
 </body>
 </html>
