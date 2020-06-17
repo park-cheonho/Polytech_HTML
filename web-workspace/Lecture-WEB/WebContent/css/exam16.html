@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	#numberList li {
+		float : left;
+		margin : 0px 100px 0px 0px;
+		font-size : 16pt;
+		list-style : lower-roman;
+		/*list-style-image : url('../html/images/pencil.jpg');*/
+		list-style-position : inside;
+	}
+	
+	li:first-child {
+		color: orange;
+	}
+	
+	li:last-child {
+		color: blue;
+	}
+	
+	li:nth-child(2n) {
+		color : green;
+	}
+	
+	a {
+		margin : 20px;
+	}
+	
+	p {
+		clear : both; 
+	}
+	  
+	/*
+	a [href]{
+		color : lime;
+	}
+	*/
+	
+	a:link {
+		color : lime;
+		text-decoration : none;
+	}
+	
+	a:visited {
+		color : lime;
+	}
+	
+	a:hover {
+		background-color: gray;
+		text-decoration: underline;
+	}
+	
+	:root {
+		font-weight : bold;
+	}
+	
+</style>
+</head>
+<body>
+	<ul id="numberList">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<p>
+		<a href="http://www.naver.com">NAVER</a>
+		<a href="http://www.daum.net">DAUM</a>
+		<a href="http://www.google.com">DAUM</a>
+	</p>
+</body>
+</html>

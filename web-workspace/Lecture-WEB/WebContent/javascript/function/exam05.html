@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ * 자바스크립트 내장함수
+ * 1. 타이머
+ * setTimeout(함수, 미리세컨즈) 일정 추가하면 알람 주는것 setTimeout
+ * setInerval(함수, ms) 일정이 어떤 주기마다 알람주는 것 setInterval
+ * clearInterval(id) 이런 id를 가지고 있는 것 삭제 
+ * clearTimeout(id) 이런 id를 가지고 있는 것 삭제 
+ * 
+ * 2. 코드 실행함수
+ * eval(str)
+ * 
+ * 3. 숫자변환함수
+ * parseInt(str)
+ * parseFloat(str)
+ * 
+ */
+ /*
+ 	//원래 쓰는 방식
+ 	var func = function() {
+ 		alert('3초 지났습니다.');
+ 	}
+	setTimeout(func, 3000);
+	
+	//콜백함수 사용 예 	
+ 	setTimeout(function() {
+ 		alert('3초 지났습니다.');
+ 	},3000);
+*/
+	
+	var id = setInterval(function() {
+		document.write('현재시간 : ' + new Date() + '<br>');
+	},1000); 	
+ 	
+ 	setTimeout(function() {
+ 		clearInterval(id);
+ 	},1000);
+ 	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
