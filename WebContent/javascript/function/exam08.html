@@ -5,6 +5,39 @@
 <title>Insert title here</title>
 <script>
 	
+	var func = function(i) {
+		setTimeout(function() {
+			alert(i);
+		}, 0);
+	}
+
+	for(var i = 0; i < 3; i++) {
+	//	func(i);
+		(function(i) {
+			setTimeout(function() {
+				alert(i);
+			}, 0);
+		})(i);
+	}
+	
+	//i에 0 , 1, 2 호출하는거 하나씩 호출 
+	//function의 i에 0,1,2 들어감
+	//function가 끝나고 setTime을 실행 그럼 function의 i 값을 setTime이 알까?
+	var func = function(i) {
+		return setTime(function)() {
+			alert(i);
+		},0);
+	}
+	
+	for(var i = 0; i < 3; i++) {
+	
+		func(i);
+	}
+	
+	
+	
+	//자바스크립트 파써가 모든 문법을 다 수행한 후에 
+	//수행이 됩니다. 그래서 for문 다 돌고 난 후에 i 값을 찍으라고 합니다.
 	for(var 1 = 0; i < 3; i++) {
 		setTimeout(function() {
 			alert(i);

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var array = [10, 20, 30, 40];
+	// var copyArray = array; 얕은 복사 shallow copy
+	
+	//쉬운 깊은 복사 하는 방법 
+	 
+	var copyArray = [];
+	for(let data of array) {
+		copyArray.push(data);
+	// 깊은복사(deep copy)	 array 가 가르키고 있는 참조변수를 복사하는 것이 아니라 참조변수가 가르키는 값을 복사하는 것  딥 카피
+	}
+	
+	// 전개연산자 ... 배열이 가진 요소를 다 풀어내는 것
+	var copyArray2 = [...array];
+	
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')
+	document.write('copyArray2 : ' + copyArray2 + '<br>')
+	document.write('<hr>')
+	
+	copyArray[2] = 1000;
+	copyArray2[2] = 1000;
+	
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')
+	document.write('copyArray2 : ' + copyArray2 + '<br>')
+	/*
+	 * array copyarr둘다 [2]가 1000이 되는 이유 얇은 복사 shallow copy이기 때문에 
+	 * array 랑 copyarr이 같은 참조변수를 가지고 있어서
+	 * 하려고 하는건 array 공간 따로 copyarr 공간 따로 가지고 array의 값은 안변하길 원함
+	 * 
+	 */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

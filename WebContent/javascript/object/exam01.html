@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//json 자바스크립트 객체 
+	//var 변수명 = {} -> 객체
+	//'속성명' : 속성값,
+	var person = {
+		
+		'name' : '홍길동',
+		'phone' : '010-1111-2222',		
+		//속성명에 특수문자 들어가면 ''꼭! 하기 
+		//특수문자 없으면 ''생략 가능
+		'phone-home' : '02-333-3333'
+	};
+	
+	document.write('속성 name 존재 여부 : ' + ('name' in person) + '<br>');
+	document.write('속성 phone 존재 여부 : ' + ('phone' in person) + '<br>');
+	document.write('속성 phone-home 존재 여부 : ' + ('phone-home' in person) + '<br>');
+	document.write('속성 addr 존재 여부 : ' + ('addr' in person) + '<br>');
+	
+	//객체가 가진 모든 값 볼때는 console이 제일 편함
+	console.log(person);
+	person.addr = '경기도 남양주시';
+	console.log(person);
+	
+	document.write('속성 name 존재 여부 : ' + ('name' in person) + '<br>');
+	document.write('속성 phone 존재 여부 : ' + ('phone' in person) + '<br>');
+	document.write('속성 phone-home 존재 여부 : ' + ('phone-home' in person) + '<br>');
+	document.write('속성 addr 존재 여부 : ' + ('addr' in person) + '<br>');
+	
+	delete(person.addr)
+	
+	document.write('속성 name 존재 여부 : ' + ('name' in person) + '<br>');
+	document.write('속성 phone 존재 여부 : ' + ('phone' in person) + '<br>');
+	document.write('속성 phone-home 존재 여부 : ' + ('phone-home' in person) + '<br>');
+	document.write('속성 addr 존재 여부 : ' + ('addr' in person) + '<br>');
+	
+	
+	// ['' or ""]해야함
+	alert('name : ' + person['name']);
+	alert('name : ' + person.name);
+	alert('phone : ' + person.phone);	
+	
+//	console.log(typeof person);
+//	alert(person);
+//    console.log(person);
+</script>
+</head>
+<body>
+
+</body>
+</html>
