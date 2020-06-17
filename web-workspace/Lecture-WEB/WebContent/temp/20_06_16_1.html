@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    
+    let int = prompt('10 ~ 100이하의 숫자 하나를 입력 하세요 : ')
+    int = Number(int);
+        
+	for(var i = 1; i<=int; i++) {
+		
+		var num_0x = (i%10);
+		//var num_x0 = (i%10);
+		var tens = parseInt(i/10);  
+		var numClap = (num_0x == 3 || num_0x == 6 || num_0x == 9);
+		var numBeep = (num_0x == 0);
+		var tenClap = (tens == 3 || tens == 6 || tens == 9);
+		
+		if(numBeep && tenClap) {
+			document.write('짝'+ '뽀'.repeat(tens) + '숑');
+		} else if(tenClap && numClap) {
+		 	document.write('짝짝');
+		} else if(numBeep){
+			document.write('뽀'.repeat(tens) + '숑');		
+		} else if(tenClap || numClap) {
+			document.write('짝');
+		} else {
+			document.write(i);		
+		}
+		
+		
+		//document.write(num_x0 + '<br>');
+		document.write('<br>');	
+	}
+               
+</script>
+</head>
+<body>
+
+</body>
+</html>

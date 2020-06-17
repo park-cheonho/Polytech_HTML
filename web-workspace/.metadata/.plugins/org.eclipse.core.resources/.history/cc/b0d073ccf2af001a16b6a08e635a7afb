@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	alert('Play Ball~~!!!!!!!');
+
+	var num = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
+	num.sort(function(a, b) {
+		return 0.5 - Math.random()
+	});
+	//document.write(num + '<br>');
+
+	var pcNum = num[0] + num[1] + num[2];
+	//document.write(pcNum + '<br>');
+
+	var strikecnt = 0;
+	var ballcnt = 0;
+	var count = 0;
+	var outcnt = 0;
+
+	while (count <= 10) {
+		var answer = prompt('숫자 3개를 입력 : ');
+		var answerArr = answer.split(' ');
+
+		strikecnt = 0;
+		ballcnt = 0;
+		count++;
+
+		for (var i = 0; i < 3; i++) {
+			for (var j = 0; j < 3; j++) {
+				if (pcNum[i] == answerArr[j]) {
+					if (i === j) {
+						strikecnt++;
+					} else {
+						ballcnt++;
+					}
+					break;
+				}
+			}
+		}
+		if (strikecnt === 0 && strikecnt === 0) {
+			outcnt++;
+		}
+
+		if (strikecnt === 3) {
+			alert('축하합니다' + cnt + '번 만에 맞추셨습니다. 정답은 :' + pcNum + '입니다.');
+			break;
+		} else if (count >= 10) {
+			alert('주어진 공격기회 10회가 지났습니다. 정답은 : ' + pcNum + '입니다.');
+		} else if(outcnt === 3) {
+			alert('아웃이 3번 되었습니다. 게임 종료 정답은 : ' + pcNum + '입니다.');
+			break;
+		} else {
+			alert(strikecnt + '스트라이크' + ballcnt + '볼');			
+		}
+	}
+
+	/*
+	document.write(answer[0]);
+	document.write(answer[1]);
+	document.write(answer[2]);
+	//}
+
+	// for(i = 0; i < 3; i++)
+	// pcNum[i]=answer[i] = s
+	// pcNum[0]=answer[0] = s
+	// pcNum[1]=answer[1] = s
+	// pcNum[2]=answer[2] = s
+
+	//
+
+	// 3s-pcNum=answer 
+	// 2s-
+	// 1s2b-
+	// 1s1b-
+	// 1s-
+	// 3b-
+	// 2b- 
+	// 1b-
+	// out-
+	 */
+</script>
+</head>
+<body>
+
+</body>
+</html>
