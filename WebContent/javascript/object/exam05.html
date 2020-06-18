@@ -22,6 +22,7 @@
 	//var person2 = person;
 	
 	// 깊은 복사 1
+	/*
 	var person2 = {};
 	for(let key in person) {
 		person2[key] = person[key]
@@ -34,10 +35,13 @@
 		}
 		return object;
 	}
-	
+	*/
 	var person2 = clone(person);
 	
 	//깊은 복사2 ... 중요함 !! 객체가 배열로 취급 안에 있는 각 속성을 전개 연산자를 통해서 쉽게 깊은 복사가 가능하다.
+	// 요소 하나하나를 각각 전개하는 연산자 
+	// ver person2 = {'name' : '홍길동', 'phone' : '010-1212-1212', 'toString' : function() {}}
+	// 각각 의 객체를 개별로 전개
 	var person2 = {...person}
 	
 		
