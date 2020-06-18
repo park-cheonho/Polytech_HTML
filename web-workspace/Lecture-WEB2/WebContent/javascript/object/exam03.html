@@ -32,10 +32,23 @@
 	}
 	*/
 	
-	persons.push({
-		'name' : '강길동'
-		
-	})
+	//persons 배열에 객체 를 하나 추가한다. 명령어는 stack명령어와 동일 push넣기, pop제거
+	 persons.push({ 
+      
+      'name'  : '임길동',
+      'phone' : '010-6666-7777'
+    })
+   
+   /*
+   persons.pop({ 
+      
+      'name'    : '임길동',
+      'phone' : '010-6666-7777'  
+   });
+   */
+   
+   //stack처럼 가장 최신의 객체를 삭제한다.
+   //persons.pop();
 	
 	//person2에 주소 추가
 	for(let index in persons) {

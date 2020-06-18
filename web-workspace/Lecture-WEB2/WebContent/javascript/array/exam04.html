@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var state = new Array();
+	
+	//state[0] = '서울특별시';
+	//state[1] = '대전광역시';
+	
+	state['서초'] = '서울특별시';
+	state['광명'] = '경기도';
+	state['해운대'] = '부산광역시';
+	
+	for(var index in state) {
+		console.log(state)
+		document.write(index + ' : ' + state[index] + '<br>')
+	}
+	
+	document.write('<br>')
+	
+	var person = new Array();
+	person['name'] = '홍길동';
+	person['phone'] = '010-1111-2222';
+	person['addr'] = '서울시 서초구';
+	// 배열을 객체 인것 처럼 요소들 저장 목적으로도 사용 가능
+	// 아래처럼 gender 추가 가능 f12참조
+	person.gender = 'M'
+	
+	for(var key in person) {
+		document.write(key + ' : ' + person[key] + '<br>')
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
