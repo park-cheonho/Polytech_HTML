@@ -1,8 +1,206 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <script>
+
+        var dict = ["rainbow", "banana", "boat", "apple", "icecream","eraser"];
+        //dic.push("rainbow");
+        var ran = Math.floor(Math.random() * 6);
+        var word = dict[ran];
+        var len = word.length;
+        var process = [];
+        var cnt=7;
+
+        for(var i = 0 ; i<len ;i++){
+            process.push('*');
+        }
+
+        alert(word);
+
+        var ipt='';
+        var cnt2=0;
+        var bool;
+        var guess='';
+        while(cnt>0){
+            ipt = prompt("A - Z : ");
+            cnt2=0;
+            for(var j=0 ; j<len ; j++){
+                if(word[j]==ipt){
+                    process[j]=ipt;
+                    cnt2++;
+                }
+            }
+
+
+
+            if(cnt2==0){
+                cnt --;
+                var msg = "존재하지 않습니다. 기회는 ";
+                msg+= cnt;
+                msg+="번 남았습니다."
+                alert(msg);
+            }
+            else{
+                var showpro='';
+                for(var j=0 ; j<len ; j++){
+                    showpro+=process[j];
+                }
+                alert(showpro);
+            }
+
+
+
+
+            bool=prompt("단어를 아시겠습니까? y 혹은 n을 입력해주세요.");
+            if(bool=='y'){
+                guess=prompt("정답을 맞춰주세요");
+                if(guess==word){
+                    alert("정답입니다!");
+                    break;
+                }
+                else{
+                    alert("정답이 아닙니다. 계속 도전해주세요!");
+                }
+            }else{
+                continue;
+            }
+
+
+
+
+        }
+        // //단어 배열 만들기
+        // var dict = ['banana', 'apple', 'cycle', 'doll', 'eliphant', 'floor', 'golf'];
+        //
+        // //단어 배열에서 랜덤으로 하나 뽑기
+        // var random = [Math.floor(Math.random() * dict.length)];
+        // //확인
+        // document.write(random);
+        // var word = [word];
+        // //단어를 저장할 배열
+        // var answerArray = [];
+        // for (var i = 0; i < word.length; i++) {
+        //     answerArray[i] = "*";
+        // }
+        // //기회
+        // var cnt = 0;
+        // //행맨게임 시작
+        // alert('*********   행맨 게임 시작    **********')
+        // alert('*********   기회는 총 5번입니다.   **********')
+        //
+        // while(cnt < 5) {
+        //     var guess = prompt("A - Z");
+        //
+        //     if (guess === null) {
+        //         alert("게임을 종료 하셨습니다");
+        //         break;
+        //     } else if (guess.length !== 1) {
+        //         alert("하나의 알파벳을 입력해 주세요");
+        //     } else if (word.includes(guess)) {
+        //         for (var k = 0; k < word.length; k++) {
+        //            if(answerArray [k] = guess) {
+        //                alert(answerArray);
+        //                cnt++;
+        //            };
+        //         }
+        //     } else {
+        //         alert("<" + guess + ">" + "는 존재하지 않습니다.");
+        //         cnt++;
+        //         }
+        //         var question = prompt("단어를 아시겠습니까?(n , y)");
+        //         if (question === 'y') {
+        //             var ans = prompt("내 정답은: ");
+        //             if (ans === word) {
+        //                 alert("정답입니다!!!")
+        //                 break;
+        //             } else {
+        //                 alert(ans + "은 존재하지 않습니다")
+        //                 cnt++;
+        //             }
+        //         }
+        //     }
+        //     if(cnt > 5) {
+        //         alert("기회를 모두 소진하였습니다.")
+        // }
+
+
+        // // 정답 진행중에
+        // let ing=[];
+        // for(let y=0; y<leng; y++){
+        //     ing[y] = '*';
+        // }
+        // }
+        // //document.write(answerArray);
+        // alert(answerArray);
+        // var guess = "";
+        //
+        // //var guess = word.length;
+        // var cnt = 10;
+        //
+        // function game(guess) {
+        //
+        //     guess = prompt("A - Z");
+        //     if (words.includes(guess)) {
+        //         for (var j = 0; j < word.length; j++) {
+        //             if (guess == answerArray[j]) {
+        //                 answerArray[j] = guess + '';
+        //             } else if (answerArray[i] != '*') {
+        //                 answerArray[i] = answerArray[i]
+        //             } else {
+        //                 answerArray[j] = '*'
+        //             }
+        //         }
+        //
+        //         alert(answerArray);
+        //     } else {
+        //         cnt = cnt - 1
+        //         alert(answerArray + "\n" + guess + "는 존재하지 않습니다. \n 기회는 " + cnt + "번 남았습니다.")
+        //     }
+        // }
+        //
+        // function play(game, guess){
+        //
+        //     while(cnt > 0){
+        //         game(guess)
+        //         var tryAns = prompt("단어를 아시겠습니까?(yes or no) : ")
+        //         if(tryAns == "yes"){
+        //             var myAns = prompt("정답은? : ")
+        //             if(myAns == word){
+        //                 alert("***정답입니다***")
+        //                 break
+        //             } else {
+        //                 cnt = cnt - 1
+        //                 alert("틀리셨습니다!!! 기회는"+ cnt +"번 남았습니다.")
+        //             }
+        //         } else{
+        //
+        //         }
+        //     }
+        // }
+        //
+        // play(game, guess)
+        //
+        //
+        //
+        //         if(guess  === null) {
+        //         alert("게임을 종료 하셨습니다");
+        //         break;
+        //         }
+        // else if (guess.length  !== 1) {
+        //     alert("하나의 알파벳을 입력해 주세요");
+        // }
+        // else {
+        //     for(var j = 0; j < word.length; j++) {
+        //         if(word[j] === guess) {
+        //             answerArray[j] = guess; cnt++;
+        //         }
+        //     }
+        // }
+        // }
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
 
