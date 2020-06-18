@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+	 *  브라우저 객체 모델 BOM
+	 *  - window
+	 *  아무것도 안붙히고 사용가능한 객체는 대부분 window
+	 *  - location 객체 (주소와 관련)
+	 *  - navigator 객체 
+	 *  - history 객체 뒤로가기 같이 기록하는 정보
+	 *  - screen 객체 창에 관련된 개념 화면의 가로 세로
+	 *  - document 객체 body에 여러개의 태그 붙혀서 쓰도록 html 문서와 관련된 객체
+	 *  
+	 *  - open 오늘 하루 보지 않기 같은 작은 팜업창 띄우기
+	 */
+	 
+	 a = 10;
+	 window.alert(a);
+	 let sub = window.open("", "", "width=300, height=300");
+	 // 팝업 차단이면 null 인데 null이면 false값이다!!!!
+	if(!sub) {
+		alert('팝업창 옵션을 확인하세요')
+	}
+	//left top 기준 절대기준
+	sub.moveTo(200,200)
+	
+	//
+	window.setInterval(function() {
+		sub.moveBy(20, 20)
+	},1000)
+</script>
+</head>
+<body>
+
+</body>
+</html>
