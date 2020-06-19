@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+<script>
+    //자바스크립트가 body에 무슨내용 있는지 알고 싶은 상황
+    //window.onload수행후에 해야함 바디 로드 후에
+    //document로 확인 하려하는듯 출력되는 영역 관장하는 것이 document인가?
+    console.log(document.body) // null이 찍힘 js 실행시에는 <body> 태그 로드 되지도 않았음
+    window.onload = function () {
+        console.log(document.body) // 윈도우 온로드는 바디까지 로드 되고 난 후에 js실행 이미 구성된 <body>태그가 이씅ㅁ
+        alert('inner HTML : '+ document.body.innerHTML);
+        alert('inner HTML : '+ document.body.innerText);
+        // 특정 태그 안에 들어 있는 요소들을 볼 수 있는 방법 = innerHTML, innerText
+
+        let tags = '';
+        tags += '<ui>'
+        tags += '<li>red</li>'
+        tags += '<li>orange</li>'
+        tags += '<li>blue</li>'
+        tags += '<li>black</li>'
+        tags += '</ul>'
+        // 사용빈도 높음
+        //document.body.innerHTML = tags; //body라는 태그가 있는데 그걸 바꿔라 tag로
+        //document.write(tags); <body>가 아니라 화면이 바뀜
+        /*
+        document.body.innerHTML = '<h1>aaa</h1>'; 의 의미
+        body - h1 - 'aaa'
+        document.body.innerText = '<h1>aaa</h1>'; 의 의미
+        body - '<h1>aaa</h1>' 삽입 &lt; h1 &gt; aaa &lt; /h1 &gt;
+        //document.body.innerText = tags; 는 태그 해석 불가 그냥 문자로
+        */
+        //document.body.innerText = tags;
+        //
+
+        //document.body.innerHTML = document.body.innerHTML + tags
+        // 줄이면
+        //document.body.innerHTML += tags
+        document.body.innerHTML += '<br>'
+        document.body.innerText += tags
+    }
+</script>
+</head>
+<body>
+    hello<br>
+    <h1>안녕하세요</h1>
+
+</body>
+</html>

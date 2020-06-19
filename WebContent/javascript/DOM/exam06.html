@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+
+        function clickTimer() {
+            setTimeout(function () {
+                alert('3초 지났습니다.')
+            },3000)
+        }
+
+        window.onload = function () {
+            let btn = document.getElementById('clickBtn')
+            //고전적 이벤트 모델
+            btn.onclick = function () {
+                alert('click btn....')
+            }
+        }
+        window.onload = function() {
+            //h1이라는 이름으로 태그를 만들겠다.
+            var h1Tag = document.createElement('h1');
+            var tagText = document.createTextNode('Hello');
+            //연결이 안되어 있는 상황 트리구조 연결해주려고
+            // body - h1 - Hello
+            h1Tag.appendChild(tagText);
+            document.body.appendChild(h1Tag);
+
+            h1Tag.onclick = function () {
+                alert('클릭')
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 인라인 방식의 이벤트 모델 태그 자체에다가 이벤트를 추가함 -->
+    <input type="button" value="클릭" onclick="alert('클릭')";>
+    <input type="button" value="3초 타이머" onclick="clickTimer()">
+    <!-- 고전적 이벤트 방식 -->
+    <input type="button" value="클릭2" id="clickBtn">
+</body>
+</html>

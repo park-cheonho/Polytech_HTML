@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        // 동적 새로고침하면 태그 새로 추가
+        window.onload = function() {
+            //document.write('<h1>Hello</h1>')
+            //document.body.innerHTML = '<h1>Hello</h1>'
+            //var div = document.querySelector('div')
+            //div.innerHTML = '<h1>Hello</h1>'
+            //h1이라는 이름으로 태그를 만들겠다.
+            var tag = document.createElement('h1')
+            var tagText = document.createTextNode('Hello')
+            console.log(tag)
+            console.log(tagText)
+            //연결이 안되어 있는 상황 트리구조 연결해주려고
+            // body - h1 - Hello
+            tag.appendChild(tagText)
+            document.body.appendChild(tag)
+
+            var imgtag = document.createElement('img')
+            imgtag.src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png"
+            //document.body.appendChild(imgtag)
+            //console.log(imgtag)
+
+            let aTag = document.createElement('a')
+            // 속성 추가 방법 2게
+            // 1. .연산자
+            //aTag.href = 'http://www.daum.net'
+            // 2. setAttribute('href', 'http://www.daum.net')
+            aTag.setAttribute('href', 'http://www.daum.net')
+            aTag.setAttribute('target', '_blank')
+
+            aTag.appendChild(imgtag)
+            document.body.appendChild(aTag)
+            //console.log(aTag)
+        }
+    </script>
+</head>
+<body>
+<!-- 정적 -->
+<h1>Hello</h1>
+<!-- <div>a</div> -->
+<!-- <img src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png">
+-->
+</body>
+</html>

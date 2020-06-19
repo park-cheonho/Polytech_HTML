@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function loadcall() {
+            alert('load is complete')
+        }
+        //window에 있는 onload를 재정의 한다
+        // 바디에도 onload window에서 onload있으면 바디가 적용
+        // js에 이벤트 속성 넣는게 추세
+        window.onload = function () {
+            alert('window')
+        }
+    </script>
+</head>
+<!-- <body onload="loadcall()"> -->
+<body>
+    <!-- on 들어가면 이벤트 속성? -->
+    <h1>Hello</h1>
+    <h2>Good</h2>
+    <img src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png"><br>
+    <img src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png"><br>
+    <img src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png"><br>
+    <img src="https://t1.daumcdn.net/b2/creative/154919/8e4d9d3782409f7f74c655efc1392e93.png"><br>
+</body>
+</html>

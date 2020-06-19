@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+<script type="text/javascript">
+        /*
+        # id {
+
+        }
+        처럼 css에서 특정 id 접근했던 것처럼
+        js에서도 특정 id만 접근 가능
+         */
+        //document 의 범위 <html>부터 끝까지
+        //document.body 는 body 전체
+       window.onload = function () {
+            var tags = document.getElementsByTagName('td')
+            console.log(tags)
+        // 배열로 나옴
+            console.log(tags)
+            tags[0].innerHTML = '아이디'
+            console.log(tags)
+
+            let nodes = document.querySelectorAll('td')
+            console.log(nodes)
+            nodes[1].innerText = '비밀번호';
+
+        }
+
+</script>
+</head>
+<body>
+    <table border="1" style="width: 100; height: 100">
+        <tr>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+        </tr>
+    </table>
+</body>
+</html>

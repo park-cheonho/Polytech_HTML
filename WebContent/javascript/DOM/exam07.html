@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+<script type="text/javascript">
+    window.onload = function () {
+        //이벤트 버블링? 이벤트 발생하는 하위 태그를 실행하면
+        // 자기의 상위에 이벤트가 있으면 상위의 이벤트도 가져옴
+        // e.cancelBubble = true 해야 상위 이벤트 안됨
+        var span = document.querySelector('span')
+        var h1 = document.querySelector('h1')
+        var div = document.querySelector('div')
+
+        span.onclick = function (e) {
+            //클릭하면 발생하는 이벤트 받는 매개변수를 e라고 한다
+            //MouseEvent가 e로 들어오는 것
+            //항상 함수가 실행되면 인자가 생기는데 그 인자를 매개변수수안 받았을뿐
+            // 클릭했을 때의 이벤트(MouseEvent)를 e로 받는다. 매개변수명은 내 멋대로 정하면 됨.
+            alert('click span....')
+            console.log(e)
+        }
+
+        h1.onclick = function (e) {
+            alert('click h1.....')
+            e.cancelBubble = true
+            //div는 안나오게 됨
+            //h1의 상위인 div의 이벤트는 발생 x고
+        }
+        /*
+        h1.onclick = function() { // 클릭했을 때의 이벤트(MouseEvent)를 e로 받는다.
+            alert('click h1...')
+            arguments[0].cancelBubble = true // 나보다 상위의 같은 이벤트에 영향을 미치지 맙시다!
+        }
+        */
+
+        div.onclick = function () {
+            alert('click div.....')
+        }
+    }
+</script>
+</head>
+<body>
+    <div>
+        <h1>
+            <span>Hello</span>
+        </h1>
+    </div>
+</body>
+</html>
