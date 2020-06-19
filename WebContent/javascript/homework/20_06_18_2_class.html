@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        class Shape {
+            constructor(width, height, color) {
+                this._width = width;
+                this._heigth = height;
+                this._color = color;
+            }
+
+            invoke() {
+                console.log(`you make ${this}`)
+            }
+
+            draw() {
+                console.log(`drawing ${this._color} color !`);
+            }
+
+            getArea() {
+                return this._width * this._heigth;
+            }
+        }
+        // 사각형 class
+        class Rectangle extends Shape {
+            getArea() {
+                return super.getArea();
+            }
+            draw() {
+                super.draw();
+            }
+            toString() {
+                return `Rectangle: color: ${this._color}`;
+            }
+        }
+        // 사각형 객체 생성
+        const rectangle = new Rectangle(20, 20, '#FF9999');
+        rectangle.invoke();
+        rectangle.draw();
+        console.log(rectangle.getArea());
+
+        //삼각형 class
+        class Triangle extends  Shape {
+            getArea() {
+                return super.getArea() / 2;
+            }
+            draw() {
+                super.draw();
+            }
+            toString() {
+                return `Triangle: color: ${this._color}`;
+            }
+        }
+        // 삼각형 객체 생성
+        const triangle = new Triangle(20,20,'red');
+        triangle.invoke();
+        triangle.draw();
+        console.log(triangle.getArea());
+
+        //원 class
+        class Circle extends Shape {
+            invoke() {
+                super.invoke();
+            }
+            draw() {
+                super.draw();
+            }
+            getArea() {
+                return super.getArea();
+            }
+
+        }
+
+
+
+        //console.log(rectangle instanceof Rectangle);
+        //console.log(triangle instanceof Rectangle);
+        //console.log(triangle instanceof Triangle);
+        //console.log(triangle instanceof Shape);
+        //console.log(triangle instanceof Object);
+        //console.log(triangle.toString());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
