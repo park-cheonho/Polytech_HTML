@@ -3,6 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        function Shape(width, height, area) {
+
+            this._width = width;
+            this._height = height;
+            this._area = area;
+        }
+
+        Shape.prototype.info = function() {
+            var msg = '';
+            for(let key in this) {
+                if((typeof this[key] != 'function'))
+                    msg += key + ' : ' + this[key] + '<br>'
+            }
+            document.write(msg)
+        }
+        //사각형
+        function Rectangle(width, height) {
+            let area = width * height;
+            this.super = Shape
+            this.super(width,height,area);
+        }
+
+        Rectangle.prototype.info = function() {
+            var msg = '';
+            for(let key in this) {
+                if((typeof this[key] != 'function'))
+                    msg += key + ' : ' + this[key] + '<br>'
+            }
+            document.write(msg)
+        }
+
+        //삼각형
+        function Triangle(width, height) {
+            let area = width * height / 2;
+            this.super = Shape;
+            this.super(width,height,area);
+        }
+        Triangle.prototype.info = function() {
+            var msg = '';
+            for(let key in this) {
+                if((typeof this[key] != 'function'))
+                    msg += key + ' : ' + this[key] + '<br>'
+            }
+            document.write(msg)
+        }
+
+        //원
+        function Circle(width) {
+            let pi = 3.141592
+            let area = width * width * pi;
+            this.super = Shape;
+            this.super(width,pi,area);
+        }
+        Circle.prototype.info = function() {
+            var msg = '';
+            for(let key in this) {
+                if((typeof this[key] != 'function'))
+                    msg += key + ' : ' + this[key] + '<br>'
+            }
+            document.write(msg)
+        }
+       let rectangle = new Rectangle(10,10);
+       let triangle = new Triangle(10,10);
+       let circle = new Circle(10);
+
+        document.write('---------rectangle------------' + '<br>');
+        rectangle.info();
+        document.write('---------triangle------------' + '<br>');
+        triangle.info();
+        document.write('---------circle------------' + '<br>');
+        circle.info();
+    </script>
 </head>
 <body>
 

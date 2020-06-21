@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //const name = 'ellie';
+        //const age = 4;
+        //print(name, age);
+
+        // object는 키와 밸류의 집합
+
+        const obj1 = {}; // 객체 리터럴럴
+        const obj2 = new Object(); // 객체 생성자
+
+        function print(person) {
+            console.log(person.name);
+            console.log(person.age)
+        }
+
+        const ellie = {name: 'ellie', age: 4};
+        print(ellie);
+
+        ellie.hasjob = true;
+        console.log(ellie.hasjob)
+        delete ellie.hasjob;
+
+        console.log(ellie.name);
+        console.log(ellie['name']);
+        ellie['hasjob'] = true;
+        console.log(ellie.hasjob)
+
+        function printValue(obj, key) {
+            console.log(obj[key]);
+        }
+        printValue(ellie,'name');
+        //3 property value shorthand
+        const person1 = {name : 'bob', age: 2};
+        const person2 = {name : 'steve', age: 3};
+        const person3 = {name : 'dave', age: 4};
+        const person4 = new Person('ellie', 30);
+        console.log(person4);
+        //4 constructor function
+        function Person(name, age) {
+            //this. {];
+            this.name = name;
+            this.age = age;
+            //return this;
+        }
+        //5 in operator
+        console.log('name' in ellie);
+        console.log('age' in ellie);
+        console.log('hasjob' in ellie);
+
+        //6 for in / for of
+        //for (key in obj)
+        console.clear()
+        for (key in ellie) {
+            console.log(key)
+        }
+        //for (value of iterable)
+        const array = [1,2,3,4];
+        for (value of array) {
+            console.log(value);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

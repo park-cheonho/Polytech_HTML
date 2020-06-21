@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        // 교수님 말씀을 잘 이해한것인지 조금 헷갈립니다.
         class Shape {
             constructor(width, height, color) {
                 this._width = width;
                 this._heigth = height;
                 this._color = color;
+            }
+
+            get width() {
+                return this._width
+            }
+
+            set width(width) {
+                this._width = width;
+            }
+
+            get height() {
+                return this._heigth
+            }
+
+            set height(height) {
+                this._heigth = height
             }
 
             invoke() {
@@ -61,6 +78,12 @@
 
         //원 class
         class Circle extends Shape {
+            constructor(radius,color) {
+                super();
+                this._radius = radius;
+                this._color = color;
+            }
+
             invoke() {
                 super.invoke();
             }
@@ -68,12 +91,19 @@
                 super.draw();
             }
             getArea() {
-                return super.getArea();
+                return this._radius*this._radius*Math.PI;
+            }
+            toString() {
+                return `Circle: color : ${this._color}`;
             }
 
         }
 
-
+        //원 객체 생성
+        const circle = new Circle(20,'blue');
+        circle.invoke();
+        circle.draw();
+        console.log(circle.getArea());
 
         //console.log(rectangle instanceof Rectangle);
         //console.log(triangle instanceof Rectangle);
@@ -82,6 +112,7 @@
         //console.log(triangle instanceof Object);
         //console.log(triangle.toString());
 
+        document.write(rectangle);
 
     </script>
 </head>

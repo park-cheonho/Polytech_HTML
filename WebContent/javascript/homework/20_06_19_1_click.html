@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RED_BOX</title>
+<script>
+    window.onload = function () {
+        var up = document.getElementById('up')
+        var down = document.getElementById('down')
+        var numUp = document.getElementById('numUp')
+        var numDown= document.getElementById('numDown')
+
+        var num = 0;
+
+        up.onclick = function () {
+            ++num;
+            numUp.innerHTML = num + '번 클릭'
+        }
+
+
+        var num2 = 10;
+
+        down.onclick = function () {
+            if (num2 > 0)
+            --num2;
+            numDown.innerHTML = num2 + '번'
+        }
+    }
+</script>
+<style>
+    table {
+        border-color: red;
+        border-style: solid;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-
+    <table class = 'table'>
+        <tr>
+            <td id = 'numUp'>0번 클릭</td>
+            <td><input type="button" value="클릭" id="up"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="숫자감소" id="down"></td>
+            <td id = 'numDown'>10번</td>
+        </tr>
+    </table>
 </body>
 </html>

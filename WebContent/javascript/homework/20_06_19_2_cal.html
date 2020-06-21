@@ -1,10 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Insert title here</title>
+<script type="text/javascript">
+    var text1 = "";
+    var op = "";
+    var text2 = "";
+    var result = "";
+    var isDotSelelcted = false;
+
+    // 결과 출력 창에 숫자 표현
+    function selectedBtn(id) {
+       if (id==".") {
+           isDotSelelcted = true;
+       }
+       if (op== "") {
+           text1 += id;
+       } else {
+           text2 += id;
+       }
+
+       document.getElementById('showText').value = document.getElementById('showText').value + id;
+    }
+    // 결과 출력 창에 연산자 표현
+    function selectedOp(id) {
+        op = id;
+        document.getElementById('showText').value = text1 + " " + op + " ";
+    }
+    function changeSign() {
+        if(text1 == "") {
+            alert("값이 없습니다.");
+            return;
+        }
+
+        if(parseFloat(text1) < 0) { // 값이 음수 -> 양수
+            if(op == '') { //
+                text1 = Math.abs(parseInt(text1));
+                document.getElementById('showText').value = text1;
+            } else if(parseFloat(text2) < 0) {
+                text2 = Math.abs(parseInt(text2));
+                document.getElementById('showText').value = text2;
+            }
+        } else { //값 양수 -> 음수
+            if(op == '') {
+                text1 = '-' + text1;
+                document.getElementById('showText').value = text1;
+            } else {
+                text2 = '-'+text2;
+                document.getElementById('showText').value = text2;
+            }
+        }
+    }
+    function clearAll() {
+        text1 = "";
+        text2 = "";
+        op = "";
+        result = "";
+        document.getElementById('showText').value = "";
+    }
+    function getResult() {
+        result = text1 + op + text2;
+
+        if(isDotSelelcted) { //실수
+            document.getElementById('showText').value = document.getElementById('showText').value + " = " + eval(result).toFixed(3);
+        } else {
+            document.getElementById('showText').value = document.getElementById('showText').value + " = " + eval(result);
+        }
+
+        text1 = eval(result);
+        op="";
+        text2="";
+        result = "";
+
+        isDotSelelcted = false;
+    }
+
+</script>
+<style>
+
+    table {
+        border-collapse: separate;
+    }
+    td {
+        padding: 5px 10px;
+        text-align: center;
+    }
+    input {
+        border: none;
+    }
+
+</style>
 </head>
 <body>
-
+<table border="1">
+    <caption>1005의 계산기<br><br></caption>
+    <thead>
+    <tr>
+        <th colspan="5"><input type="text" id="showText" style="width: 400pt; height: 20pt"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type = "button" onclick=selectedBtn('7') id='7' value='7'></td>
+        <td><input type = "button" onclick=selectedBtn('8') id='8'  value='8'></td>
+        <td><input type = "button" onclick=selectedBtn('9') id='9' value='9'></td>
+        <td><input type = "button" onclick=selectedOp('/') id='divide' value='/'></td>
+    </tr>
+    <tr>
+        <td><input type = "button" onclick=selectedBtn('4') id='4' value='4'></td>
+        <td><input type = "button" onclick=selectedBtn('5') id='5' value='5'></td>
+        <td><input type = "button" onclick=selectedBtn('6') id=6 value='6'></td>
+        <td><input type = "button" onclick=selectedOp('*') id='multi' value='*'></td>
+    </tr>
+    <tr>
+        <td><input type = "button" onclick=selectedBtn('1') id='1' value='1'></td>
+        <td><input type = "button" onclick=selectedBtn('2') id='2' value='2'></td>
+        <td><input type = "button" onclick=selectedBtn('3') id='3' value='3'></td>
+        <td><input type = "button" onclick=selectedOp('-') id='minus' value='-'></td>
+    </tr>
+    <tr>
+        <td><input type = "button" onclick=selectedBtn('0') id='0' value='0'></td>
+        <td><input type = "button" onclick=selectedOp('.') id='dot' value='.'></td>
+        <td><input type = "button" onclick=selectedOp('+') id='plus' value='+'></td>
+        <td><input type = "button" onclick=selectedOp('%') id='per' value='%'></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type = "button" onclick=getResult() id='equal' value="="></td>
+        <td colspan="2"><input type = "button" onclick=clearAll() id='clearBtn' value="Clear"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
