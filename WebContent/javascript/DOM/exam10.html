@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+    function checkForm() {
+        //select 태그를 선택했는지 안햇는지 알고 싶다
+        //let searchType = document.searchForm.searchType
+        let f = document.searchForm
+        if (f.searchType.selectedIndex == 0) {
+        //if (f.searchType[0].selected) {
+            alert('검색항목을 선택하세요')
+            //선택 안한곳 bold
+            f.searchType.focus()
+            return false
+        }
+        // f.searchForm f.searchWord
+        /*
+        if (f.searchWord.value == "") {
+            alert('검색어를 입력하세요')
+            return false
+        }
+        */
+        let words = ['','제목','작성자'];
+        if (f.searchWord.value == "") {
+            alert('검색할 ' + words[f.searchType.selectedIndex] + '를 입력 하세요')
+            //선택 안한곳 bold
+            f.searchWord.focus()
+            return false
+        }
+        //     let keyword = ''
+        //     switch (f.searchType.selectedIndex) {
+        //     case 1 :
+        //             keyword = '제목'
+        //             break;
+        //     case 2 :
+        //             keyword = '작성'
+        //             break;
+        //     }
+        //     alert('검색할 ' + keyword + '를 입력 하세요')
+        //     return false
+        // }
+        //사용자가 입력한 값은 value
+        if (f.searchWord.value.length < 2) {
+            alert('검색어는 2글자 이상 입력해주세요')
+            f.searchWord.focus()
+            return false
+        }
+        return true
+
+        // true는 submit 됨 return true
+    }
+</script>
+</head>
+<body>
+    <form action="http://www.naver.com" name="searchForm" onsubmit="return checkForm()">
+        <select name="searchType">
+            <option>선택하세요</option>
+            <option>제목</option>
+            <option>작성자</option>
+        </select>
+        <!-- 입력한 값이 없으면 submit 안하려고 함  -> onsubmit-->
+        <!-- form 태그 안에 있는 onsubmit submit 버튼을 허용 할까요?-->
+        <!-- onsubmit="return false" 면 submit안돼-->
+        <input type="text" name="searchWord">
+        <!-- 입력한 값을 전달 -->
+        <input type="submit" value="검색">
+    </form>
+</body>
+</html>

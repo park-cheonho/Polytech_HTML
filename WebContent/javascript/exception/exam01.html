@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 예외 처리 throw 도 있음
+
+        try {
+            // 각 별개의 에러
+            throw new Error("사용자에러!!!!") // 사용자 정의 에러! 아래의 message에 사용자 에러 뜸!!
+            let array = new Array(9999999999999);
+        } catch (e) {
+            alert('예외 발생!!!')
+            console.log(e.message)
+
+            for (var i in e) {
+                document.write(i + ' : ' + e[i] + '<br>')
+            }
+        } finally {
+            console.log('finally 구문진입...') // 에러가 없어도 나오는 구문
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

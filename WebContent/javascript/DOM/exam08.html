@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /*
+    dom level2
+    표준 이벤트 모델 - addEvnetListener(이벤트 속성, handler, cupaturing사용여부)
+     */
+    window.onload = function () {
+        let bin = document.getElementById('btn')
+        btn.addEventListener('click',function () {
+            alert('button click....')
+        }.true)
+        // true로 만들면 아래에서 위로 이벤트 캡쳐링
+        // false면 이벤트 버블링 위에서 아래로
+
+        let span = document.querySelector('span')
+        span.addEventListener('click',function () {
+            alert('span slick')
+        })
+    }
+</script>
+<body>
+
+</body>
+</html>
