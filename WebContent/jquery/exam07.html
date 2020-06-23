@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div01 {
+            background-color: #0F4C81;
+            height: 150px;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            alert('ready')
+
+            $(':button').click(function () {
+                //$('h1:first').hide('slow')
+                $('h1:first').hide(3000)//밀리세컨드
+            })
+
+            $('body > h1').dblclick(function () {
+                $(this).hide(1000)
+            })
+
+            // $('#div01').mouseenter(function () {
+            //     $(this).css('backgroundColor', '#940825')
+            // })
+            //
+            // $('#div01').mouseleave(function () {
+            //     $(this).css('backgroundColor', '#950513')
+            // })
+
+            // hover 는 마우스 enter , 마우스 leave 순서서
+            // 라이브러리 꼭 확인!!
+           $('#div01').hover(function () {
+                $(this).css('backgroundColor', '#940825')
+            }, function () {
+                $(this).css('backgroundColor', '#ff9999')
+            })
+
+            $('#div01').click(function (event) {
+                console.log(event.pageX,event.pageY)
+            })
+
+
+        })
+
+    </script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="div01">
+        나는 div영역 입니다.
+        마우스를 접근시켜 보세요
+    </div>
+    <h1>1번째 문장입니다.</h1>
+    <h1>2번째 문장입니다.</h1>
+    <div>
+        <h1>3번째 문장입니다.</h1>
+    </div>
+    <h1>4번째 문장입니다.</h1>
+    <button>클릭</button>
+</body>
+</html>

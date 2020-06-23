@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            //key down 사용 누를때 텍스트 속성?
+            $('input').keydown(function () {
+                $(this).css('color', '#ff9999')
+            })
+            //key up 키보드에서 떼면
+            $('input').keyup(function () {
+                $(this).css('color', 'black')
+            })
+
+            $('input').focus(function () {
+                $(this).css('border', '3px solid #723412')
+                $(this).css('backgroundColor', 'pink')
+            })
+
+            $('input').blur(function () {
+                $(this).css('border', '1px solid black')
+                $(this).css('backgroundColor', 'white')
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+    이름 : <input type="text" size="30"><br>
+    전화번호 : <input type="text" size="30">
+</body>
+</html>

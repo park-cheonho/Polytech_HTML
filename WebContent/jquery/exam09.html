@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        /*
+        h1 tag에 클릭하면 글자색이 빨간색으로 변하고
+        h1에 마우스 접근하면 배경이 노란색으로 변하고
+        h1에 마우스가 벗어나면 배경을 흰색으로 변경
+         */
+        $(document).ready(function() {
+            alert('ready')
+
+            $('h1').on({
+                'click' : function () {
+                    // $(this).css('color', '#ff1234')
+                    // $(this).css('backgroundColor', 'pink')
+                    $(this).css({
+                        //특수문자 있으면 무조건 ''사용하기 !! 생성자 함수 person 때 했음
+                        'color' : 'olive',
+                        'background-color' : 'pink'
+                    })
+                }, 'mouseenter' : function () {
+                    $(this).css('backgroundColor', '#999999')
+                }, 'mouseleave' : function () {
+                    $(this).css('backgroundColor', 'white')
+                }
+            })
+
+
+            // $('h1').click(function () {
+            //     $(this).css('color', 'red')
+            // })
+
+            // $('h1').mouseenter(function () {
+            //     $(this).css('backgroundColor', '#940825')
+            // })
+            //
+            // $('h1').mouseleave(function () {
+            //     $(this).css('backgroundColor', '#950513')
+            // })
+
+            // $('h1').hover(function () {
+            //     $(this).css('backgroundColor', '#940825')
+            // }, function () {
+            //     $(this).css('backgroundColor', '#ff9999')
+            // })
+
+
+        })
+
+    </script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+<h1>1번째 문장입니다.</h1>
+<h1>2번째 문장입니다.</h1>
+<div>
+    <h1>3번째 문장입니다.</h1>
+</div>
+<h1>4번째 문장입니다.</h1>
+<button>클릭</button>
+</body>
+</html>

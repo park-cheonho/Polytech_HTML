@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('h1').click(function (event,data) {
+                //h1 객체
+                // 얘만 자바 스크립트 문법 -> 대체할 j query 문법은? html() text()
+                $(this)[0].innerHTML += data
+                //$(this).html()
+                //$(this).text()
+            })
+            // 강제적으로 'click' 을 발생시키고 싶을때 trigger
+            // 새로고침 안하고 새로고침 효과를 보려고 할 때
+            setInterval(function () {
+                $('h1').trigger('click', ' * ')
+            },1000)
+        })
+
+    </script>
+</head>
+<body>
+    <h1>수행률 : </h1>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#btn01').click(function () {
+                //$('p').text() // getter
+                $('#p01').text('<mark>문장이 변환 되었습니다.</mark>') // setter
+            })
+
+            $('#btn02').click(function () {
+                //$('p').text() // getter
+                $('#p02').html('<mark>문장이 변환 되었습니다.</mark>') // setter
+            })
+
+            $('#btn03').click(function () {
+                $('a').attr('href','http://www.daum.net') // setattr 은 뒤에 인자만 쓰면 됨
+            })
+            //배열을 각각 바꾸고 싶은 것임  한 번에 전체 바꾸지 않고
+            $('#btn04').click(function () {
+                // 무조건 인자는 2개가 날라옴 html 함수를 실행 하면
+                // $('p')는 배열임
+                $('p').html(function (index,element) {
+                    console.log(element)
+                    return (index + 1) + '<em>문장변환</em>'
+                })
+                //$('p').html('2 : <em>문장변환</em>')
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">사이트 이동</a>
+    <p id="p01">1번째 문장입니다</p>
+    <p id="p02">2번째 문장입니다</p>
+    <button id="btn01">TEXT변환!</button>
+    <button id="btn02">HTML변환!</button>
+    <button id="btn03">주소변환!</button>
+    <button id="btn04">문장변환!</button>
+</body>
+</html>
