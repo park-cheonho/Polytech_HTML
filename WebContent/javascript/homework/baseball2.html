@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	alert("3자리 숫자 야구 게임을 시작합니다. 기회는 10번입니다. 3아웃은 게임종료입니다.");
+	var ranarray = [];
+	var inputarray = [];
+	var cnt = 10;
+	var randomnum;
+	var k;
+
+	while (true) {
+		var ch = 0;
+		randomnum = Math.floor(Math.random() * 10);
+		for (k = 0; k < ranarray.length; k++) {
+			if (ranarray[k] == randomnum) {
+				ch = 1;
+			}
+		}
+		if (ch != 1) {
+			ranarray.push(randomnum);
+		}
+		if (ranarray.length == 3) {
+			break;
+		}
+		ch = 0;
+	}
+
+	alert(ranarray);
+
+	var st = 0;
+	var ba = 0;
+	var out = 0;
+	var first;
+	var second;
+	var third;
+	var i;
+	var j;
+
+	while (cnt) {
+		if (out == 3) {
+			alert("3-OUT입니다. 정답은 다음과 같습니다.");
+			alert(ranarray);
+			break;
+		}
+
+		var input = prompt("0 ~ 9 사이의 숫자 3개를 입력");
+		first = input.substr(0, 1);
+		second = input.substr(1, 1);
+		third = input.substr(2, 1);
+		inputarray.push(Number(first));
+		inputarray.push(Number(second));
+		inputarray.push(Number(third));
+
+		//alert(inputarray);
+		for (i = 0; i < 3; i++) {
+			for (j = 0; j < 3; j++) {
+				if (ranarray[i] == inputarray[j]) {
+					//alert(i+":"+inputarray[i]);
+					//alert(j+":"+ranarray[j]);
+					if (i == j) {
+						st++;
+						//alert("strike")
+					} else {
+						ba++;
+						//alert("ball")
+					}
+					break;
+				}
+			}
+		}
+
+		if (st !== 0 || ba !== 0) {
+			if (st == 3) {
+				alert(`ball : ${ba} , str : ${st}`);
+				alert("축하합니다. 정답입니다.");
+				break;
+			}
+			alert(`ball : ${ba} , str : ${st}`);
+		} else {
+			alert("OUT입니다.")
+			out++;
+		}
+
+		st = 0;
+		ba = 0;
+		cnt--;
+		inputarray = [];
+		if (cnt == 0) {
+			alert("10번의 기회를 소진하셨습니다. 정답은 다음과 같습니다.");
+			alert(ranarray);
+		}
+
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

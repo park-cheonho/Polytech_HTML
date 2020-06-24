@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var dict = ["rainbow", "banana", "boat", "apple", "icecream"]
+	var myWord = dict[Math.floor(Math.random() * 5)]
+	var ans = []
+	var cnt = 10
+	
+	//ans 초기값 설정
+	for(var i = 0; i < myWord.length; i++){
+		ans[i] = "* "
+	}
+	alert(ans)
+	var alphabet = ""
+
+	
+	function game(alphabet){
+		
+		alphabet = prompt("A-Z")
+		if(myWord.includes(alphabet)){
+			
+			for(var i = 0; i < myWord.length; i++){
+				if(alphabet == myWord[i]){
+					ans[i] = alphabet+ " "
+				} else if(ans[i] != "* "){
+					ans[i] = ans[i]
+				}else{
+					ans[i] = "* "
+				}
+			}
+			
+			alert(ans)
+		} else{
+			cnt = cnt - 1
+			alert(ans + "\n" + alphabet +"은 존재하지 않습니다. \n기회는 " + cnt + "번 남았습니다.")
+		}
+	}
+	
+
+	
+	function play(game, alphabet){
+		
+		while(cnt > 0){
+			game(alphabet)
+			var tryAns = prompt("단어를 아시겠습니까?(yes or no) : ")
+			if(tryAns == "yes"){
+				var myAns = prompt("정답은? : ")
+				if(myAns == myWord){
+					alert("***정답입니다***")
+					break
+				} else {
+					cnt = cnt - 1
+					alert("틀리셨습니다!!! 기회는"+ cnt +"번 남았습니다.")
+				}
+			} else{
+				
+			}
+		}
+	}
+	
+	play(game, alphabet)
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function randomNumbers(){
+		//3개의 숫자를 담을 배열 선언
+		var correct = [];
+		
+		//0 ~ 9 사이의 난수 추출. 단, 중복을 피함
+		for(var i = 0; i < 3; i++){
+			let num = Math.floor(Math.random() * 10);
+			correct.push(num);
+			if(i != 0){
+				for(var j = 0; j < i; j++){
+					if(num == correct[j]){
+						//배열의 이전 원소에 중복된 게 있다면 삽입했던 원소를 빼내고 난수를 다시 추출할 준비를 한다
+						correct.pop(num);
+						i--;	
+					}
+				}
+			}
+		}
+		alert(correct);	
+		return correct;
+	}
+	
+	function game(correct){
+		//사용자에게 숫자 3개 입력받기
+		var input = prompt("숫자 3개를 입력하세요");	//입력받은 데이터 타입은 항상 string 
+		//문자열도 문자의 배열이므로 인덱스 사용 가능
+		
+		var ball = 0;
+		var strike = 0;
+		var out = 0;
+		
+		//입력받은 숫자들과 정답 숫자들과 비교
+		for(var i = 0; i < input.length; i++){
+			for(var j = 0; j < correct.length; j++){
+				if(input[i] == correct[j]){
+					ball++;
+					if(i == j){
+						strike++;
+						ball--;
+					}
+				}
+			}
+		}
+		
+		//결과 출력
+		if(ball == 0 && strike ==0){
+			out++;
+//			return "out";
+			let reulst = "";
+			result = out + "out";
+			alert(result);
+			return result;
+			alert(`${out} out`);
+		}else{
+			let result = "";   
+			if(strike != 0){
+				result = result + strike + "s" + " ";
+			}
+			if(ball != 0){
+				result = result + ball + "b";
+			}
+			alert(result);
+			return result;
+		}
+	}
+
+	while(true){
+		alert('야구 게임을 시작합니다');
+		var correct = randomNumbers();
+		for(var i = 1; i <= 10; i++){
+			var result = game(correct);
+			if(result == "3s"){
+				alert("축하합니다. 정답입니다!");
+				break;
+			}else if(result == "3out"){
+				alert("3 out입니다. 게임을 실패했습니다.");
+				break;
+			}
+			alert(`기회는 ${10-i}번 남았습니다.`);
+		}
+		alert('아쉽습니다. 기회를 다 소진하셨습니다.');
+	}
+	
+	
+</script>
+</head>
+<body>
+</body>
+</html>
