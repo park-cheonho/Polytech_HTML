@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            border: 1px solid red;
+            padding: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 기존의 방식
+
+            //     $('button').click(function () {
+            //         var tags = document.getElementsByTagName('p')
+            //         for (let i = 0; i < tags.length; i++) {
+            //             tags[i].parentNode.removeChild(tags[i])
+            //         }
+            //     })
+
+
+            //jQuery remove 자기 자신태그부터 자식 태그까지 지워짐
+            $('#btn01').click(function () {
+               $('p').remove()
+               //$('div').remove()
+            })
+            //jQuery empty 자기 자신은 남아 있고 그 안에 있는 자식 태그들이 사라짐
+            $('#btn02').click(function () {
+               $('p').empty()
+               //$('div').empty()
+            })
+
+            $('button').click(function () {
+                //$('p').remove()
+                //$('div').remove()
+                //$('div').empty()
+                //$('#id01').remove()
+                //$('#id01').empty()
+                //$('p.c01').remove()
+                //$('p').remove('.c01')
+
+                //p태그중 아이디가 id01인거 삭제 클래스명이 c01인거 삭제
+                //$('p#id01').remove()
+                //$('p.c01').remove()
+                //위랑 아래랑 같음
+                $('p').remove('#id01, .c01')
+                //,반드시 써야함 css 선택 방식..!!!!
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <p id="id01">나는 박천호1 입니다</p>
+    <mark class="c01">나는 박천호2 입니다</mark><br>
+    나는 박천호3 입니다<br>
+    <p class="c01">나는 박천호4-1 입니다</p>
+    <p>나는 박천호4-2 입니다</p>
+</div>
+    <p class="c01">나는 박천호5 입니다</p>
+    <button id="btn01">remove 삭제</button>
+    <button id="btn02">empty 삭제</button>
+    <button>삭제</button>
+
+</body>
+</html>

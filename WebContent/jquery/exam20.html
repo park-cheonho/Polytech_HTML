@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+    // body -> h1 / 추가하려는 strong-"안녕" / img / h2
+        $(document).ready(function() {
+            $('#btn01').click(function() {
+                $('img').before('<strong>안녕1</strong>')
+                $('img').after('<em>안녕2</em>')
+                // body -> h1 / 추가하려는 strong-"안녕1" / img / em-"안녕2/ h2
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello</h1>
+    <img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png">
+    <h2>Good-bye~~</h2>
+<button id="btn01">추가</button>
+</body>
+</html>
