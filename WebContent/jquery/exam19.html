@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            /*
+            // 버튼 누르면
+            $('#btn01').click(function () {
+                // 태그와 태그사이의 text 만들기
+                let h1Tag = document.createElement('h1')
+                let text = document.createTextNode('세번째 문장')
+                h1Tag.appendChild(text)
+                document.querySelector('div').appendChild(h1Tag)
+            })
+            */
+            /*
+            prepend append
+             */
+            // jQuery로 만들기
+            $('#btn01').click(function() {
+                $('div').append('<h1>세번째문장</h1>')
+            })
+
+            $('#btn02').click(function () {
+                //$('ol').append('<li>노</li>')
+                $('ol').prepend('<li>노</li>')
+            //append prepend 차이
+            //append는 맨 마지막으로 들어오고 prepend는 맨 처음으로 들어옴
+            })
+
+            $('#btn03').click(function () {
+                //$('body').append('<h4>body 태그에 추가한 문장</h4>')
+                //밑에 들어감 ol 밑에
+                //$('body').prepend('<h4>body 태그에 추가한 문장</h4>')
+                //$('body').prepend('<h3>body 태그에 또 추가한 문장</h3>')
+                //$('body').prepend('<h5>body 태그에 또또 추가한 문장</h5>')
+                // 한 번에 쓰기
+                // 결과가 다름 구조적으로 조금 다름 위의 방법은 body 밑에 div 옆에 h5, h3, h4 추가
+                // 밑에는 body 밑에 div 옆에  h4, h3, h5로 추가
+                $('body').prepend('<h4>body 태그에 추가한 문장</h4>', '<h3>body 태그에 또 추가한 문장</h3>', '<h5>body 태그에 또또 추가한 문장</h5>')
+
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <h1>첫번째 문장</h1>
+    <h1>두번째 문장</h1>
+    <!-- <h1>세번째 문장</h1> -->
+</div>
+<h2>색상표</h2>
+<ol>
+    <li>빨</li>
+    <li>파</li>
+    <li>초</li>
+</ol>
+<button id="btn01">문장추가</button>
+<button id="btn02">색상추가</button>
+<button id="btn03">본문추가</button>
+</body>
+</html>

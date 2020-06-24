@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1 {
+            font-style: italic;
+        }
+        .c2 {
+            color: orange;
+        }
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        //class명에 active는 선택이 된거 라는 의미 -> 부트스트랩 참고
+        $(document).ready(function() {
+            //body * 은 body 밑에 모든 태그
+            $('body *').addClass('red')
+            $('body h1').addClass('blue')
+
+            $('h1').removeClass('red')
+        })
+    </script>
+</head>
+<body>
+<h1 class="c1 c2">나는 문장1입니다</h1>
+<h1>나는 문장2입니다</h1>
+<p>나는 단락입니다<p>
+<div>
+    나는 구역입니다
+</div>
+</body>
+</html>

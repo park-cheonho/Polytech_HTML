@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <!-- css 임포트 시에는 link태그를 사용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        //bxSlider 꼭 여러개 해보기!!!!!!!!
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                mode: 'fade',
+                captions: 'true',
+                slideWidth: 500
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="slider">
+    <div><img src="../../html/images/한화.jpg" title="강한 이글스"></div>
+    <div><img src="../../html/images/한화2.png" title="귀여운 이글스"></div>
+    <div><img src="../../html/images/한화3.jpg" title="승리한 이글스"></div>
+</div>
+</body>
+</html>

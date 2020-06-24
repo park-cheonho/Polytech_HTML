@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\Users\cheon\Desktop\Polytech_WEB\web-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3412903693.index
-2583872954.index
-1362380218.index
-1482413569.index
-1674823844.index
-3494917604.index
