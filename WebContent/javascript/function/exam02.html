@@ -5,8 +5,20 @@
 <title>Insert title here</title>
 <script>
 
+
+   function aaa(){
+      alert("call aaa");
+   }
+
+   function aaa(data){
+      alert("call aaa(data)");
+   }
+   function aaa(a,b){
+      alert("call aaa(a,b)");
+   }
+
 	function aaa() {
-		
+		// 매개변수의 갯수!!!!!!!!
 		switch(arguments.length) {
 		
 		case 0 :
@@ -24,6 +36,7 @@
 	
 	aaa();
 	aaa("hello", 20);
+	aaa("시험 시발")
 	aaa(10, 20, 30, 40, 50);
 	
 </script>

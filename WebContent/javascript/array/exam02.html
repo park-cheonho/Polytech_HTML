@@ -8,15 +8,16 @@
 	alert(names);
 	
 	document.write('<h3>방법1</h3>');
-	/*
+
 	for(var i = 0;  i< names.length; i ++) {
 		console.log(names[i]);
 	}
-	
+	//i 는 인덱스
 	for(var i in names){
 		document.write(names[i] + '<br>');
+		document.write(i + '<br>');
 	}
-	*/
+    //name은 각각 요소?
 	for(var name of names){
 		document.write(name + '<br>');
 	}
